@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
             leading: const Icon(Icons.arrow_downward_outlined),
             title: const Text('Pagina 1'),
             onTap: () {
-              Navigator.pushNamed(context, 'card');
+              Navigator.pushNamed(context, 'list_view2');
             },
           );
         },
