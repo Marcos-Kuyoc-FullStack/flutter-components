@@ -1,4 +1,5 @@
-import 'package:fl_components/screens/screens.dart';
+import 'package:fl_components/router/app_routes.dart';
+import 'package:fl_components/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,16 +10,16 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
-        elevation: 0,
       ),
       body: ListView.separated(
-        itemCount: 10,
+        itemCount: AppRoutes.menuOptions.length + 1,
         separatorBuilder: (BuildContext context, int index) {
           return ListTile(
-            leading: const Icon(Icons.arrow_downward_outlined),
-            title: const Text('Pagina 1'),
+            leading: Icon(AppRoutes.menuOptions[index].icon,
+                color: AppTheme.primary),
+            title: Text(AppRoutes.menuOptions[index].name),
             onTap: () {
-              Navigator.pushNamed(context, 'list_view2');
+              Navigator.pushNamed(context, AppRoutes.menuOptions[index].route);
             },
           );
         },

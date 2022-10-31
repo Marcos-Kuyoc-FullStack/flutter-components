@@ -9,9 +9,7 @@ class ListViewThowScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('List View 2'),
-          elevation: 0,
-          backgroundColor: Colors.indigo),
+          title: const Text('List View 2'), backgroundColor: Colors.indigo),
       body: ListView.separated(
         itemCount: sellers.length,
         itemBuilder: (context, index) {
