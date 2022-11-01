@@ -32,6 +32,11 @@ class AppRoutes {
         icon: Icons.credit_card,
         name: 'card',
         screen: const CardScreen()),
+    MenuOptions(
+        route: 'avatar',
+        icon: Icons.supervised_user_circle_outlined,
+        name: 'avatar',
+        screen: const AvatarScreen())
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
