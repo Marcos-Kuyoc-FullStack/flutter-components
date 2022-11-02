@@ -7,6 +7,8 @@ class CustomTextFormField extends StatelessWidget {
   final IconData? suffixIcon;
   final TextInputType? keyboardType;
   final bool obscureText;
+  final String formProperty;
+  final Map<String, String> formValues;
 
   const CustomTextFormField({
     Key? key,
@@ -16,6 +18,8 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.keyboardType,
     this.obscureText = false,
+    required this.formProperty,
+    required this.formValues,
   }) : super(key: key);
 
   @override
@@ -26,7 +30,7 @@ class CustomTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       obscureText: obscureText,
       textCapitalization: TextCapitalization.words,
-      onChanged: (value) => {print('Value: $value')},
+      onChanged: (value) => {formValues[formProperty] = value},
       validator: (value) {
         if (value == null) return 'Requerido';
         return value.length < 3 ? 'Mínimo 3 letras' : null;
