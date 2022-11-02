@@ -1,18 +1,12 @@
-import 'package:fl_components/screens/animated.dart';
 import 'package:flutter/material.dart';
 
-import 'package:fl_components/models/menu_option.dart';
+import '../models/models.dart';
 import '../screens/screens.dart';
 
 class AppRoutes {
   static const initialRoute = 'home';
 
   static final menuOptions = <MenuOptions>[
-    // MenuOptions(
-    //     route: 'home',
-    //     icon: Icons.home,
-    //     name: 'Home',
-    //     screen: const HomeScreen()),
     MenuOptions(
         route: 'list_view1',
         icon: Icons.list_alt,
@@ -42,7 +36,12 @@ class AppRoutes {
         route: 'animated',
         icon: Icons.play_arrow_outlined,
         name: 'animated',
-        screen: const AnimatedScreen())
+        screen: const AnimatedScreen()),
+    MenuOptions(
+        route: 'inputs',
+        icon: Icons.input_outlined,
+        name: 'inputs',
+        screen: const InputsScreen())
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
