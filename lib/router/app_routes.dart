@@ -1,3 +1,4 @@
+import 'package:fl_components/screens/animated.dart';
 import 'package:flutter/material.dart';
 
 import 'package:fl_components/models/menu_option.dart';
@@ -7,11 +8,11 @@ class AppRoutes {
   static const initialRoute = 'home';
 
   static final menuOptions = <MenuOptions>[
-    MenuOptions(
-        route: 'home',
-        icon: Icons.home,
-        name: 'Home',
-        screen: const HomeScreen()),
+    // MenuOptions(
+    //     route: 'home',
+    //     icon: Icons.home,
+    //     name: 'Home',
+    //     screen: const HomeScreen()),
     MenuOptions(
         route: 'list_view1',
         icon: Icons.list_alt,
@@ -36,11 +37,17 @@ class AppRoutes {
         route: 'avatar',
         icon: Icons.supervised_user_circle_outlined,
         name: 'avatar',
-        screen: const AvatarScreen())
+        screen: const AvatarScreen()),
+    MenuOptions(
+        route: 'animated',
+        icon: Icons.play_arrow_outlined,
+        name: 'animated',
+        screen: const AnimatedScreen())
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
+    appRoutes.addAll({'home': (BuildContext context) => const HomeScreen()});
 
     for (final options in menuOptions) {
       appRoutes
